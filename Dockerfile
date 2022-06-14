@@ -16,13 +16,13 @@ RUN \
     echo "**** install packages ****" && \
     apt-get update && \
     apt-get install -y \
-        python \
+        python-is-python3 \
         git && \
 
     echo "**** install radarr-mover ****" && \
     mkdir -p /app/ && \
     cd /app/ && \
-    git clone "https://github.com/bdowden/radarr_mover.git" . && \
+    git clone https://github.com/bdowden/radarr_mover.git . && \
     echo "**** installed radarr-mover ****"
 
     EXPOSE 8781
