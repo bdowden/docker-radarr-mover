@@ -24,8 +24,7 @@ RUN \
     cd /app/ && \
     git clone https://github.com/bdowden/radarr_mover.git . && \
     echo "**** installed radarr-mover ****" && \
-    echo "**** Starting mover API ****" && \
-    python app.py
+    echo "**** Starting mover API ****" 
 
     EXPOSE 8781
     VOLUME /config
