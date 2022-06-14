@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.15
+FROM ghcr.io/linuxserver/baseimage-ubuntu:focal
 
 # set version label
 ARG BUILD_DATE
@@ -8,13 +8,14 @@ LABEL build_version="Dowdentech.com version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="bdowden"
 
 # environment settings
-ARG RADARR-MOVER_BRANCH="main"
-ENV XDG_CONFIG_HOME="/config/xdg"
+ARG DEBIAN_FRONTEND="noninteractive"
+ENV XDG_DATA_HOME="/config" \
+XDG_CONFIG_HOME="/config"
 
 RUN \
     echo "**** install packages ****" && \
-    apk add -U --upgrade --no-cache \
-        curl \
+    apt-get update && \
+    apt-get install -y \
         python \
         git && \
 
