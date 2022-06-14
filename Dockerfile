@@ -23,7 +23,7 @@ RUN \
     mkdir -p /mover/ && \
     cd /mover/ && \
     git clone https://github.com/bdowden/radarr_mover.git . && \
-    pip install -r requirements.txt && \
+    pip3 install -r requirements.txt && \
     echo "**** installed radarr-mover ****" && \
     echo "**** Starting mover API ****" && \
     cd app && \
