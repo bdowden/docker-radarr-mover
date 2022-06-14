@@ -17,6 +17,7 @@ RUN \
     apt-get update && \
     apt-get install -y \
         python-is-python3 \
+        python3-pip \
         git && \
 
     echo "**** install radarr-mover ****" && \
