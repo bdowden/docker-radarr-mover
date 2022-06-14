@@ -17,18 +17,17 @@ RUN \
     apt-get update && \
     apt-get install -y \
         python-is-python3 \
-        python3-pip \
+        pip \
         git && \
 
     echo "**** install radarr-mover ****" && \
     mkdir -p /mover/ && \
     cd /mover/ && \
     git clone https://github.com/bdowden/radarr_mover.git . && \
-    pip3 install -r requirements.txt && \
+    pip install -r requirements.txt && \
     echo "**** installed radarr-mover ****" && \
     echo "**** Starting mover API ****" && \
-    cd app && \
-    python app.py
+    cd app
 
     EXPOSE 8781
     VOLUME /config
