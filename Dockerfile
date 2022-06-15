@@ -20,10 +20,9 @@ RUN \
         pip \
         git && \
     echo "**** install radarr-mover ****" && \
-    cd / && \
     git clone https://github.com/bdowden/radarr_mover.git && \
     cd radarr_mover && \
-    pip install -r requirements.txt && \
+    pip install -r /radarr_mover/requirements.txt && \
     echo "**** installed radarr-mover ****"
 
 COPY root/ /
