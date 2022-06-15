@@ -19,7 +19,6 @@ RUN \
         python-is-python3 \
         pip \
         git && \
-
     echo "**** install radarr-mover ****" && \
     cd / && \
     git clone https://github.com/bdowden/radarr_mover.git && \
@@ -27,8 +26,7 @@ RUN \
     pip install -r requirements.txt && \
     echo "**** installed radarr-mover ****"
 
-ENTRYPOINT [ "/bin/bash" "-l", "-c" ]
-CMD [ "python", "/mover/app/app.py" ]
+COPY root/ /
 
 EXPOSE 8781
 VOLUME /config

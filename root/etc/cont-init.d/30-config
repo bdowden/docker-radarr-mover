@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv bash
+
+python /radarr_mover/app/app.py
