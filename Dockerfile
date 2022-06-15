@@ -21,13 +21,14 @@ RUN \
         git && \
 
     echo "**** install radarr-mover ****" && \
-    mkdir -p /mover/ && \
-    cd /mover/ && \
-    git clone https://github.com/bdowden/radarr_mover.git . && \
+    cd / && \
+    git clone https://github.com/bdowden/radarr_mover.git && \
+    cd radarr_mover && \
     pip install -r requirements.txt && \
-    echo "**** installed radarr-mover ****" && \
-    echo "**** Starting mover API ****" && \
-    cd app
+    echo "**** installed radarr-mover ****"
 
-    EXPOSE 8781
-    VOLUME /config
+ENTRYPOINT [ "/bin/bash" "-l", "-c" ]
+CMD [ "python", "/mover/app/app.py" ]
+
+EXPOSE 8781
+VOLUME /config
